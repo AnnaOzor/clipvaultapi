@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+clipvaultapienv/
+venv/
+.env
+
+# PyCharm
+.idea/
+
+# Pytest
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Database
+test.db
