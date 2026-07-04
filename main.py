@@ -8,7 +8,12 @@ from datetime import datetime
 
 from schemas import ClipStatusUpdate, ClipRequest, ClipStatus, ClipResponse
 
-app = FastAPI()
+app = FastAPI(
+    title="Clip Vault API",
+    description="REST API for managing video clip metadata.",
+    version="1.0.0"
+)
+
 models.Base.metadata.create_all(bind=engine)
 
 def get_db():
@@ -19,6 +24,17 @@ def get_db():
         session.close()
 
 db_dependency = Annotated[Session, Depends(get_db)]
+
+@app.get("/", tags=["Home"])
+async def root():
+    return {
+        "project": "Clip Vault API",
+        "author": "Anna Ozor",
+        "description": "REST API for managing video clip metadata.",
+        "documentation": "/docs",
+        "openapi": "/openapi.json",
+        "health": "/health"
+    }
 
 @app.get("/clips",  response_model=list[ClipResponse], status_code=status.HTTP_200_OK)
 async def read_all_clips(
