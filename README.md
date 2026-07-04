@@ -6,7 +6,7 @@ This project was developed as a take-home assessment for the Software Engineer I
 
 ## Live Demo
 
-- **GitHub Repository:** https://github.com/yourusername/clipvaultapi
+- **GitHub Repository:** https://github.com/AnnaOzor/clipvaultapi.git
 - **Live API (Render):** https://clipvaultapi.onrender.com
 - **Swagger UI:** https://clipvaultapi.onrender.com/docs
 - **OpenAPI Schema:** https://clipvaultapi.onrender.com/openapi.json
